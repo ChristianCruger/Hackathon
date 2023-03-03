@@ -8,7 +8,7 @@ import {
 	opWr_oneLine,
 	opWr_2eqs,
 	Round,
-} from '../classes/helper_functions.js';
+} from './helper_functions.js';
 
 export class CrossSectionAnalysis {
 	// Run through a constructor function when initializing the class:

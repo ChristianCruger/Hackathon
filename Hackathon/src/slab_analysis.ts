@@ -1,11 +1,11 @@
-import docWriter from '../classes/DocWriter.js';
-import EC_CS from '../classes/creep_shrinkage.js';
-import { CrossSectionAnalysis } from '../cross_section_analysis/CrossSection_Analysis.js';
-import { Steel, EC_Concrete, structural_fibers } from '../classes/materials.js';
-import { Reinforcement } from '../classes/Reinforcement.js';
-import { Rectangular } from '../classes/SectionTypes.js';
-import { Round, hslToHex, ucfirst } from '../classes/helper_functions.js';
-import { referenceSlab } from './reference_slabs.js';
+import docWriter from './DocWriter';
+import EC_CS from './creep_shrinkage';
+import { CrossSectionAnalysis } from './CrossSection_Analysis.js';
+import { Steel, EC_Concrete, structural_fibers } from './materials';
+import { Reinforcement } from './Reinforcement';
+import { Rectangular } from './SectionTypes';
+import { Round, hslToHex, ucfirst } from './helper_functions';
+import { referenceSlab } from './reference_slabs';
 
 export class Slab_Analysis {
 	slab: slab;

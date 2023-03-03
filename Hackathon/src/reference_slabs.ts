@@ -1,6 +1,6 @@
 import { generalLoad, Slab_Analysis, subbase, slabParameters, slab } from './slab_analysis.js';
-import * as materials from '../classes/materials.js';
-import { Reinforcement } from '../classes/Reinforcement.js';
+import * as materials from './materials.js';
+// import { Reinforcement } from './Reinforcement';
 
 export function referenceSlab(
 	// library of reference slabs for design comparison

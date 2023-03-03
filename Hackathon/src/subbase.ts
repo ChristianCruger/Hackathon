@@ -1,5 +1,5 @@
-import docWriter from '../classes/DocWriter.js';
-import { Round, linkWrapper } from '../classes/helper_functions.js';
+import docWriter from './DocWriter';
+import { Round, linkWrapper } from './helper_functions.js';
 
 export function subbase(inputLayers: subbaseInput[], friction: number) {
 	let doc = new docWriter();

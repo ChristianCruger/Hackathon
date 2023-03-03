@@ -191,6 +191,7 @@ export class EC_Concrete {
 
 		this.refAge = 28;
 		// EPD
+		this.#lowCO2_val = false;
 		this.lowCO2 = false;
 
 		this.stress_strain_function = stress_strain_function;

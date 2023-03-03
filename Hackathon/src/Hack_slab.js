@@ -1,6 +1,6 @@
-import { Slab_Analysis } from './js/slab2/slab_analysis.js';
-import { subbase } from './js/slab2/subbase.js';
-import * as materials from './js/classes/materials.js';
+import { Slab_Analysis } from './slab_analysis';
+import { subbase } from './subbase';
+import * as materials from './materials';
 
 // interface file to communicate between UI index.html and slab_analysis code
 
