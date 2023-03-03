@@ -140,6 +140,11 @@ window.analyse = (
 		'Total Global warming potential: ' + Round(emissions.emmision_per_m2, 1) + 'kg/m2';
 
 	console.timeEnd('runTime');
+
+	return {
+		results,
+		emissions,
+	};
 };
 
 const Round = (number, digits = 2) =>

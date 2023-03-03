@@ -27,7 +27,9 @@
     const ins_thick = 400
 
     window.run = () => {
-      analyse(fck, thick, fiber, dia_bot, dia_bot, insulation, ins_thick)
+      let RES = analyse(fck, thick, fiber, dia_bot, dia_bot, insulation, ins_thick)
+
+      console.log('results', RES)
     }
   </script>
 
