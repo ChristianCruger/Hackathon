@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + TS</title>
 </head>
@@ -11,7 +10,7 @@
 <body>
   <!-- <div id="app"></div> -->
   <!-- <script type="module" src="/src/main.ts"></script> -->
-  <script type="module" src="/src/Hack_slab.js"></script> -->
+  <script type="module" src="/src/Hack_slab.ts"></script>
   <script>
     //  varialble inputs:
     const fck = 40;     // min 16 max 50
@@ -19,12 +18,13 @@
 
     //reinforcement:
     const fiber = '3'; // valid: '0','2','3','4','5','6','8','10'
-    const dia_top = 0; // min 0 max 32
-    const dia_bot = 0; // min 0 max 32
+    const dia_top = 0; //   min 0 max 32
+    const dia_bot = 0; //   min 0 max 32
 
     //insulation
-    const insulation = 'Sundolitt S60'
-    const ins_thick = 400
+    const insulation = 'S80'  // options 'C60','C80','S60',S80','S100','S150'
+    const ins_thick = 400    // min 0 max 500
+
 
     window.run = () => {
       let RES = analyse(fck, thick, fiber, dia_bot, dia_bot, insulation, ins_thick)
@@ -34,15 +34,15 @@
   </script>
 
   <div class="full-screen-container">
-    <div class="form-container">
-
+    <div class="card">
       <button onclick="run()">ANALYSE</button>
     </div>
     <br>
 
-    <div class="output-container">
+    <div class="card">
       <p id="output1"></p>
       <p id="output2"></p>
+      <p id="output3"></p>
     </div>
 
   </div>

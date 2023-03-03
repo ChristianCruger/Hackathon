@@ -514,7 +514,7 @@ export class Slab_Analysis {
 
 		let checkJointCorners = this.parameters.Code !== 'TR34';
 		if (!checkJointCorners) {
-			console.warn('Omitting verification at joint corners');
+			// console.warn('Omitting verification at joint corners');
 		}
 
 		// loop over each load:
@@ -3062,9 +3062,9 @@ export type slab = {
 	Concrete: EC_Concrete;
 	// joint details:
 	withJoints: boolean;
-	field_width: number;
-	field_length: number;
-	joints: jointtypes;
+	field_width?: number;
+	field_length?: number;
+	joints: jointtypes | {};
 };
 
 export type jointtypes =

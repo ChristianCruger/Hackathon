@@ -1,6 +1,6 @@
 import { subbaseInput } from './subbase';
-import { Round } from '../classes/helper_functions.js';
-import docWriter from '../classes/DocWriter.js';
+import { Round } from './helper_functions.js';
+import docWriter from './DocWriter.js';
 
 export default function Insulation(slabThickness: number, subbaseArray: subbaseInput[]) {
 	let doc = new docWriter();
