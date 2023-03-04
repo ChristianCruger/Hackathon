@@ -6,7 +6,7 @@ import './style.css';
 
 // interface file to communicate between UI index.html and slab_analysis code
 
-(<any>window).analyse = (
+export const analyse = (
 	fck = 30,
 	thick = 120,
 	fiber = '3',
@@ -44,6 +44,7 @@ import './style.css';
 		bot_spacing: 150,
 		bot_cover: 25,
 	};
+
 	const reinforcement = {
 		//fibers:
 		fibers: new materials.DURUS_EasyFinish(fiber, 'EC'),
@@ -178,7 +179,8 @@ import './style.css';
 	console.timeEnd('runTime');
 	return {
 		results,
-		emissions,
+		utilization: results.worst_UR.any,
+		emissions: emissions.emmision_per_m2,
 		Uvalue: insulation.Uvalue,
 	};
 };

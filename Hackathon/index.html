@@ -10,32 +10,34 @@
 <body>
   <!-- <div id="app"></div> -->
   <!-- <script type="module" src="/src/main.ts"></script> -->
-  <script type="module" src="/src/Hack_slab.ts"></script>
+  <script type="module" src="/src/optimize.ts"></script>
   <script>
-    //  varialble inputs:
-    const fck = 40;     // min 16 max 50
-    const thick = 100;  // min 100 max 400
+    // //  varialble inputs:
+    // const fck = 40;     // min 16 max 50 - interal 5
+    // const thick = 100;  // min 100 max 400 - Iinterval 10
 
-    //reinforcement:
-    const fiber = '3'; // valid: '0','2','3','4','5','6','8','10'
-    const dia_top = 0; //   min 0 max 32
-    const dia_bot = 0; //   min 0 max 32
+    // //reinforcement:
+    // const fiber = '3'; // valid: '0','2','3','4','5','6','8','10'
+    // const dia_top = 0; //   min 0 max 32
+    // const dia_bot = 0; //   min 0 max 32
 
-    //insulation
-    const insulation = 'S80'  // options 'C60','C80','S60',S80','S100','S150'
-    const ins_thick = 400    // min 0 max 500
+    // //insulation
+    // const insulation = 'S80'  // options 'C60','C80','S60',S80','S100','S150'
+    // const ins_thick = 400   // min 0 max 500
+
+    // window.run = () => {
+    //   let RES = analyse(fck, thick, fiber, dia_bot, dia_bot, insulation, ins_thick)
+
+    //   console.log('results', RES)
+    // }
 
 
-    window.run = () => {
-      let RES = analyse(fck, thick, fiber, dia_bot, dia_bot, insulation, ins_thick)
 
-      console.log('results', RES)
-    }
   </script>
 
   <div class="full-screen-container">
     <div class="card">
-      <button onclick="run()">ANALYSE</button>
+      <button onclick="window.run()">ANALYSE</button>
     </div>
     <br>
 
