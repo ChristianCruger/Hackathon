@@ -39,7 +39,7 @@
 
                 <form>
 
-                    <div class="form-group mb-1">
+                    <div class="form-group my-4">
                         <label>Calculation Type</label>
 
                         <div class="input-group">
@@ -47,25 +47,36 @@
                                 <div class="input-group-text justify-content-center"><i class="fas fa-square-root-alt"></i></div>
                             </div>
                             <select id="type" name="type" class="form-control" required="">
-
                                 <!-- <option value="1">Slabs</option> -->
                                 <option value="8">greenSlab</option>
                                 <option value="2">Point Foundation</option>
                                 <option value="3">Strip Foundation</option>
-                                <option value="7">Cross Section</option>
-                                <option disabled="" value="4">Walls</option>
-                                <option disabled="" value="5">Beams</option>
-                                <option disabled="" value="6">Decks</option>
-
+                                <option value="7">Cross Section</option> 
                             </select>
 
                         </div>
-                        <div class="w100"><label id="calcualtion_type_response" class="error"></label></div>
+
                     </div>
+
+                        <div class="form-group my-4">
+                            <label>Crack Limit</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text justify-content-center">
+                                        <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" justify="right" tabindex="0" ctxtmenu_counter="0" style="font-size: 113.1%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-right: 0px;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="block"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" justify="right" tabindex="0" ctxtmenu_counter="4" style="font-size: 113.1%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-right: 0px;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="block"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" justify="right" tabindex="0" ctxtmenu_counter="8" style="font-size: 113.1%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-right: 0px;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>w</mi><mi>c</mi></msub><mo>=</mo></math></mjx-assistive-mml></mjx-container></mjx-assistive-mml></mjx-container></mjx-assistive-mml></mjx-container>
+                                    </div>
+                                </div>
+                                <input name="crack_limit" id="crack_limit" class="form-control" type="number">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">mm</span>
+                                </div>
+                            </div>
+                        </div>
+                   
 
 
                   
-                    <div class="form-group">
+                    <div class="form-group my-4">
                         <input type="submit" name="Optimise" id="optimise" value="Register" class="btn btn-primary" >
                     </div>
                 </form>
