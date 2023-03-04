@@ -29,6 +29,8 @@
       <meta property="og:locale:alternate" content="en_GB" />
       <meta name="msapplication-TileColor" content="#f4f4f4">
       <meta name="theme-color" content="#f4f4f4">
+      <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
   </head>
 
   <body>
@@ -39,7 +41,7 @@
 
                 <form>
 
-                    <div class="form-group my-4">
+                    <div class="form-group mb-4">
                         <label>Calculation Type</label>
 
                         <div class="input-group">
@@ -58,13 +60,11 @@
 
                     </div>
 
-                        <div class="form-group my-4">
+                        <div class="form-group mb-4">
                             <label>Crack Limit</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text justify-content-center">
-                                        <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" justify="right" tabindex="0" ctxtmenu_counter="0" style="font-size: 113.1%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-right: 0px;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="block"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" justify="right" tabindex="0" ctxtmenu_counter="4" style="font-size: 113.1%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-right: 0px;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="block"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" justify="right" tabindex="0" ctxtmenu_counter="8" style="font-size: 113.1%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-right: 0px;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>w</mi><mi>c</mi></msub><mo>=</mo></math></mjx-assistive-mml></mjx-container></mjx-assistive-mml></mjx-container></mjx-assistive-mml></mjx-container>
-                                    </div>
+                                    <div class="input-group-text justify-content-center">$$ l = $$</div>
                                 </div>
                                 <input name="crack_limit" id="crack_limit" class="form-control" type="number">
                                 <div class="input-group-append">
@@ -76,8 +76,12 @@
 
 
                   
-                    <div class="form-group my-4">
-                        <input type="submit" name="Optimise" id="optimise" value="Register" class="btn btn-primary" >
+                    <div class="form-group mb-4">
+
+                        <input type="button" name="save_calculation" value="Optimise" id="save_calculation" data-toggle="modal" data-target="#myModal" class="btn btn-primary mr-2 mt-2" />
+
+
+
                     </div>
                 </form>
 
@@ -90,6 +94,49 @@
 
   </body>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-</html>
+
+<!-- Modal Popup -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">    
+        <div class="modal-header">
+            <h4 class="text-orange modal-title">Optimization Variables</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+
+
+  <script>
+
+
+    var isSubmitting = false;
+    // Open Save Modal on click
+    $('#save_calculation').on('click', function(e) {       
+        console.log("Open")
+            $('#exampleModal').modal('show');
+        
+    });
+
+
+    </script>
+    
+    
+    </html>
