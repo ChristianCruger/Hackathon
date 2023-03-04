@@ -15,11 +15,46 @@ import { analyse } from './Hack_slab';
 	let variables: variable[] = [];
 
 	// variables and their ranges:
-	variables.push({ name: 'fck', startValue: inputObj.fck, min: 16, max: 40, interval: 5 });
-	variables.push({ name: 'thick', startValue: inputObj.thick, min: 100, max: 400, interval: 10 });
-	variables.push({ name: 'fiber', startValue: inputObj.fiber, min: 0, max: 10, interval: 1 });
-	variables.push({ name: 'dia_top', startValue: inputObj.dia_top, min: 0, max: 32, interval: 1 });
-	variables.push({ name: 'dia_bot', startValue: inputObj.dia_bot, min: 0, max: 32, interval: 1 });
+	variables.push({
+		name: 'fck',
+		startValue: inputObj.fck,
+		min: 16,
+		max: 40,
+		interval: 5,
+		enabled: true,
+	});
+	variables.push({
+		name: 'thick',
+		startValue: inputObj.thick,
+		min: 100,
+		max: 400,
+		interval: 10,
+		enabled: true,
+	});
+	variables.push({
+		name: 'fiber',
+		startValue: inputObj.fiber,
+		min: 0,
+		max: 10,
+		interval: 1,
+		enabled: true,
+	});
+	variables.push({
+		name: 'dia_top',
+		startValue: inputObj.dia_top,
+		min: 0,
+		max: 32,
+		interval: 1,
+		enabled: true,
+	});
+	variables.push({
+		name: 'dia_bot',
+		startValue: inputObj.dia_bot,
+		min: 0,
+		max: 32,
+		interval: 1,
+		enabled: true,
+	});
 
 	variables.push({
 		name: 'insulation',
@@ -27,6 +62,7 @@ import { analyse } from './Hack_slab';
 		min: 60,
 		max: 100,
 		interval: 20,
+		enabled: true,
 	});
 	variables.push({
 		name: 'ins_thick',
@@ -34,6 +70,7 @@ import { analyse } from './Hack_slab';
 		min: 240,
 		max: 480,
 		interval: 80,
+		enabled: true,
 	});
 
 	// initial call:
@@ -52,6 +89,8 @@ import { analyse } from './Hack_slab';
 
 	// loop through all variables:
 	for (let i = 0; i < variables.length; i++) {
+		if (!variables[i].enabled) continue; // skip if disabled
+
 		let newInput = { ...inputObj };
 
 		newInput[variables[i].name] = variables[i].startValue + variables[i].interval;
@@ -71,8 +110,9 @@ import { analyse } from './Hack_slab';
 		let emissions_diff = newResults.emissions - originalResults.emissions;
 
 		ScoreMap.set(variables[i].name, {
-			URscore: UR_diff,
-			UvalScore: Uval_diff,
+			name: variables[i].name,
+			URscore: UR_diff / emissions_diff,
+			UvalScore: Uval_diff / emissions_diff,
 			emissionScore: emissions_diff,
 			interval: variables[i].interval,
 		});
@@ -90,9 +130,11 @@ type variable = {
 	min: number;
 	max: number;
 	interval: number;
+	enabled: boolean;
 };
 
 type variableScores = {
+	name: string;
 	URscore: number;
 	UvalScore: number;
 	emissionScore: number;
