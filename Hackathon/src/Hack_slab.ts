@@ -12,7 +12,7 @@ export const analyse = (
 	fiber = '3',
 	dia_top = 0,
 	dia_bot = 0,
-	insulationString = 'Sundolitt S60',
+	insulationString = 'S60',
 	ins_thick = 400
 ) => {
 	console.log('Analysing slab...');
