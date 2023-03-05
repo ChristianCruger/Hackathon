@@ -165,17 +165,34 @@ export const analyse = (
 
 	const insulation = Insulation(thick, subbase_input);
 
-	let insulationOutput = 'Insulation: U-value = ' + Round(insulation.Uvalue, 1);
+	// let insulationOutput = 'Insulation: U-value = ' + Round(insulation.Uvalue, 1);
 
-	const Ulimit = 0.1;
+	// const Ulimit = 0.1;
 
-	if (insulation.Uvalue <= Ulimit) {
-		insulationOutput += ' < U-limit ( = 0.1 ) -> OK! ';
-	} else {
-		insulationOutput += ' > U-limit ( = 0.1 ) -> NOT OK! ';
-	}
-	document.getElementById('output3').innerHTML = insulationOutput;
+	// if (insulation.Uvalue <= Ulimit) {
+	// 	insulationOutput += ' < U-limit ( = 0.1 ) -> OK! ';
+	// } else {
+	// 	insulationOutput += ' > U-limit ( = 0.1 ) -> NOT OK! ';
+	// }
 
+	let inputString =
+		'fck = ' +
+		fck +
+		'MPa, thickness = ' +
+		thick +
+		' fiber = ' +
+		fiber +
+		'kg/m3' +
+		', dia_top = ' +
+		dia_top +
+		'mm, dia_bot = ' +
+		dia_bot +
+		'mm, ins_thick = ' +
+		ins_thick +
+		'mm, ins = ' +
+		insulationString;
+
+	document.getElementById('output0').innerHTML = inputString;
 	// console.timeEnd('runTime');
 	return {
 		results,
