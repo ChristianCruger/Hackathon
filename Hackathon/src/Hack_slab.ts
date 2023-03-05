@@ -15,8 +15,8 @@ export const analyse = (
 	insulationString = 'S60',
 	ins_thick = 400
 ) => {
-	console.log('Analysing slab...');
-	console.time('runTime');
+	// console.log('Analysing slab...');
+	// console.time('runTime');
 
 	// Optimization variables:
 
@@ -152,7 +152,7 @@ export const analyse = (
 
 	const analysis = new Slab_Analysis(slab, subbases, reinforcement, analysisParameters);
 	const results = analysis.verifyLoads(loads);
-	console.log(results);
+	// console.log(results);
 
 	let okSTR = '	-	OK!';
 	if (Round(results.worst_UR.any * 100, 1) > 100) okSTR = '	-	NOT OK!';
@@ -176,7 +176,7 @@ export const analyse = (
 	}
 	document.getElementById('output3').innerHTML = insulationOutput;
 
-	console.timeEnd('runTime');
+	// console.timeEnd('runTime');
 	return {
 		results,
 		utilization: results.worst_UR.any,
